@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: python-app
+  namespace: argocd
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: bamboo-builds
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: python-log-helm
+    repoURL: git@github.com:shaked-develeap/Argo-demo.git
+    targetRevision: master
+  syncPolicy:
+    automated: {}
