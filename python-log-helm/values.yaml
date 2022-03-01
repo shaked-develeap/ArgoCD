@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: eu.gcr.io/argocd-demo-342818/argo-demo-app
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: "1"
 
 configMapRef: python-message
