@@ -12,8 +12,8 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     with open(outfile_path, 'a') as outfile:
-        stdout.write(f"{datetime.datetime.now():%d-%m-%Y %H:%m:%S} -- {MESSAGE} with a hard coded message\n")
-        outfile.write(f"{datetime.datetime.now():%d-%m-%Y %H:%m:%S} -- {MESSAGE} with a hard coded message\n")
+        stdout.write(f"{datetime.datetime.now():%d-%m-%Y %H:%m:%S} -- Hello Bootcamp!\n")
+        outfile.write(f"{datetime.datetime.now():%d-%m-%Y %H:%m:%S} -- Hello Bootcamp!\n")
         outfile.close
     with open(outfile_path, 'r') as outfile:        
         text = outfile.read()
